@@ -28,7 +28,7 @@ function renderQuestion(index) {
   const answerContainer = document.createElement('ul');
   for (const answer of answers) {
     const answerEl = document.createElement('li');
-    answerEl.textContent = answer;
+    answerEl.innerHTML = answer;
     answerEl.addEventListener('click', (e) => {
       e.preventDefault();
 
