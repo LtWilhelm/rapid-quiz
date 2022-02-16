@@ -102,7 +102,7 @@ document.getElementById('start').addEventListener('click', () => {
     renderQuestion(0);
     timer = setInterval(() => {
       timeRemaining--;
-      if (timeRemaining <= 0) return endQuiz;
+      if (timeRemaining <= 0) return endQuiz();
       timerEl.textContent = `${timeRemaining} seconds remaining`
     }, 1000)
   }
