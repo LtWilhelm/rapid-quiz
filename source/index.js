@@ -87,7 +87,7 @@ function endQuiz() {
     localStorage.setItem('quiz-high-scores', JSON.stringify(highScores.slice(0, 10)));
     localStorage.setItem('quiz-last-score', JSON.stringify(lastScore));
 
-    location.href = '/high-score.html'
+    location.href = 'high-score.html'
   })
 
   questionContainer.innerHTML = '';
