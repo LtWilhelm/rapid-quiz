@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KWIZ High Scores</title>
+  <link rel="stylesheet" href="/source/style.css">
+
+</head>
+
+<body>
+  <div class="container">
+    <h1>High Scores</h1>
+    <ul id="high-scores"></ul>
+  </div>
+
+  <script>
+    const highscores = JSON.parse(localStorage.getItem('quiz-high-scores') || '[]');
+    const highscoresEl = document.getElementById('high-scores');
+    for (const high of highscores) {
+      const el = document.createElement('li');
+      el.textContent = `${high.name} - ${high.score} seconds`
+      highscoresEl.append(el);
+    }
+
+    const lastScore = JSON.parse(localStorage.getItem('quiz-last-score'));
+    const lastScoreEl = document.createElement('div');
+    lastScoreEl.innerHTML = `
+    <h3>Your Score</h3>
+    <h4>${lastScore.name}</h4>
+    <p>${lastScore.score} seconds</p>
+    `
+
+    document.querySelector('.container').append(lastScoreEl);
+  </script>
+</body>
+
+</html>
