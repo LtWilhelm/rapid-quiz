@@ -56,7 +56,7 @@ function answerQuestion(index, answer, element) {
   element.style.borderColor = outline;
 
   setTimeout(() => {
-    if (timeRemaining <= 0) return endQuiz;
+    if (timeRemaining <= 0) return endQuiz();
     renderQuestion(index + 1);
   }, 1000)
 }
